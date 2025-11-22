@@ -1,12 +1,259 @@
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+body{
+	background-image:linear-gradient(lightblue,lightgreen);
+}
+
+h1{
+	font-size:100px;
+}
+h2{
+	font-size: 45px;
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    scroll-behavior: smooth;
+  }
+  
+
+
+  /* Sticky Navigation */
 nav {
-    position: sticky;  /* sticks to the top once reached */
-    top: 0;
-    background: #333;
-    padding: 10px;
+  position: sticky;
+  top: 0;
+  background: #333;
+  padding: 10px;
+  z-index: 1000;
+
+  display: flex;
+  justify-content: space-between;  /* push left + right apart */
+  align-items: center;             /* vertical alignment */
+}
+
+nav .logo {
+  color: white;
+  margin: 0;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  padding: 8px 12px;
+}
+
+nav a:hover {
+	color:lightblue;
+}
+
+  /* Highlight active link */
+  nav a.active {
+    background: #555;
+    border-radius: 4px;
+	text-decoration: underline;
+	color:lightblue;
   }
 
-  nav a {
-    color: white;
-    padding: 10px 15px;
-    text-decoration: none;
+  /* Demo sections */
+  section {
+    padding: 40px;
+	margin-bottom: 30px;
+	margin-right:40px;
+	margin-left:40px;
+    border-bottom: 1px solid #ccc;
   }
+  
+  .mission{
+	  text-align:center;
+  }
+ .resume-container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap; /* lets items move below on small screens */
+    margin: 20px 0;
+}
+
+.resume-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 45%;
+    max-width: 500px;
+}
+
+.resume-img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+/* Download button style */
+.download-btn {
+    display: inline-block;
+    padding: 10px 16px;
+    background: #3f51b5;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 500;
+}
+
+.download-btn:hover {
+    background: #32429b;
+}
+  .reference-box {
+  border: 1px solid #ccc;
+  padding-right: 20px;
+  padding-left: 20px;
+  padding-top: 20px;
+  margin: 50px ;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+ .reference-box h4{
+	 padding-top: 0px;
+ }
+
+.profile-container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.profile-photo img {
+  width: 300px;
+  height: 450px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.profile-text h2 {
+  margin: 0;
+}
+
+.profile-text p {
+  margin-top: 10px;
+  line-height: 1.5;
+}
+
+.expand-box {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+  width: 100%;
+  margin: 20px 0;
+  background: #f9f9f9;
+}
+
+.expand-header {
+  background: #e0e0e0;
+  padding: 15px;
+  cursor: pointer;
+}
+
+.expand-content {
+  max-height: 0;               /* start collapsed */
+  overflow: hidden;
+  padding: 0 15px;
+  background: white;
+  transition: max-height 0.3s ease;
+}
+
+.article-section {
+    display: flex;
+    flex-direction: column;
+    gap: 40px; /* spacing between each text-photo group */
+    margin-top: 20px;
+	background-color:navy;
+	border-radius:20px;
+	color:white;
+	padding:20px;
+}
+
+.article-block {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.article-block p {
+    flex: 1;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.article-photo {
+    width: 250px;
+    border-radius: 10px;
+    flex-shrink: 0;
+}
+
+@media (max-width: 700px) {
+  .profile-container {
+    flex-direction: column;     /* stack elements */
+    text-align: center;
+  }
+
+  .profile-photo {
+    order: 2;                   /* photo BELOW text */
+  }
+
+  .profile-text {
+    order: 1;
+  }
+
+  .profile-photo img {
+    width: 300px;               /* optional: smaller photo */
+    height: 450px;
+  }
+.nav-links {
+  display: flex;
+  gap: 5px;
+}
+nav {
+  position: sticky;
+  top: 0;
+  background: #333;
+  padding: 5px;
+  z-index: 1000;
+
+  display: flex;
+  justify-content: space-between;  /* push left + right apart */
+  align-items: center;             /* vertical alignment */
+}
+nav a {
+  color: white;
+  text-decoration: none;
+  padding: 4px 12px;
+}
+nav .logo {
+  color: white;
+  margin: 0;
+  font-size: 10px;
+}
+
+.article-block {
+        flex-direction: column;
+        text-align: left;
+    }
+
+    .article-photo {
+        width: 100%;
+        max-width: 400px;
+        margin-top: 10px;
+    }
+
+.resume-item {
+        width: 100%;
+    }
+}
+
