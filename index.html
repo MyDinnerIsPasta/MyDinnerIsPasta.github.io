@@ -1,37 +1,177 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" href="portfolio.css"
-<title>Ayumu Okumura</title>
+<link rel="stylesheet" href="portfolio.css">
+<title>Ayumu Okumura portfolio</title>
 </head>
 <body>
-<h1>Ayumu Okumura</h1>
+
 <nav>
+  <h2 class="logo">Ayumu Okumura</h2>
+
+  <div class="nav-links">
     <a href="#home">Home</a>
     <a href="#about">About</a>
-    <a href="#services">Services</a>
+    <a href="#reference">Reference</a>
+    <a href="#project">Project</a>
     <a href="#contact">Contact</a>
- </nav>
+  </div>
+</nav>
 
   <!-- Sections -->
   <section id="home">
-    <h2>Home</h2>
-    <p>Welcome to the homepage section!</p>
+  <div class="profile-container">
+
+	<div class="profile-text">
+    <h1>Ayumu Okumura</h1>
+
+  </div>
+  <div class="profile-photo">
+    <img src="1000001228.jpg" alt="Ayumu Okumura">
+  </div>
+
+  
+
+</div>
+<div class='mission'>
+<h2>misssion</h2>
+</div>
   </section>
 
   <section id="about">
     <h2>About</h2>
-    <p>This is the About section.</p>
+    <p>Ayumu is a student at Lethbridge Polytechnic taking Computer Information Technology. He is intereste ..........
+	His mission is <strong>.......... </strong></p>
+  <div class="resume-container">
+
+    <div class="resume-item">
+        <img src="CoverLetter.jpg" class="resume-img">
+        <a href="CoverLetter.pdf" download class="download-btn">Download Cover Letter</a>
+    </div>
+
+    <div class="resume-item">
+        <img src="Resume.jpg" class="resume-img">
+        <a href="Resume.pdf" download class="download-btn">Download Resume</a>
+    </div>
+
+</div>
+
   </section>
 
-  <section id="services">
-    <h2>Services</h2>
-    <p>These are our services.</p>
+  <section id="reference">
+    <h2>reference</h2>
+	<div class="reference-box">
+	  
+	  <h3>
+		“I have been very impressed with Ayumu’s effort and commitment to developing 
+		his database design and management skills and understanding. 
+		He has become quite proficient at creating and using ERDs and overall data design and relationships. ”
+	  </h3>
+	  <h3><strong>- Timothy Frantz</strong> | CIT Instructor</h3>
+	</div>
+	<div class="reference-box">
+	  
+	  <h3>
+		“Goal-oriented, hardworking, and reliable, with a strong commitment to do their best in every situation.
+		A great person to work with, and always goes above and beyond to ensure that the teams' disired outcomes are achieved”
+	  </h3>
+	  <h3><strong>- Jacqueline Lugo</strong> | Tim Hortons Team Member</h3>
+	</div>
+	<div class="reference-box">
+	  
+	  <h3>
+		“Easygoing person to work with. Always consistent, capable, and dedicated.”
+	  </h3>
+	  <h3><strong>- Kristin Dela Rosa-Bonayon</strong> | Tim Hortons Team Member</h3>
+	</div>
   </section>
 
+  <section id="project">
+	<h2>Project</h2>
+<div class="article-section">
+
+    <div class="article-block">
+        <h2>Debt Calculator</h2>
+        <img src="photo1.jpg" class="article-photo">
+    </div>
+
+    <div class="article-block">
+        <p>This is the one of the programming project developed outside school work.
+		</p>
+        <img src="photo2.jpg" class="article-photo">
+    </div>
+
+    <div class="article-block">
+        <p>Curabitur commodo libero vel augue fermentum venenatis.</p>
+        <img src="photo3.jpg" class="article-photo">
+    </div>
+
+</div>
+
+<div class="article-section">
+
+    <div class="article-block">
+        <h2>Mock Game Library</h2>
+        <img src="photo1.jpg" class="article-photo">
+    </div>
+
+    <div class="article-block">
+        <p>This project was made to understand how the real world database connected using ERD.
+		</p>
+        <img src="photo2.jpg" class="article-photo">
+    </div>
+
+    <div class="article-block">
+        <p>Curabitur commodo libero vel augue fermentum venenatis.</p>
+        <img src="photo3.jpg" class="article-photo">
+    </div>
+
+</div>
+	
+  </section>
+  
   <section id="contact">
     <h2>Contact</h2>
-    <p>Contact us here.</p>
+    <p>Contact me here.</p>
   </section>
+  
+  <script>
+  // Scroll-Following Active Section Highlight
+  const sections = document.querySelectorAll("section");
+  const navLinks = document.querySelectorAll("nav a");
+
+  window.addEventListener("scroll", () => {
+    let current = "";
+
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop;
+      const sectionHeight = section.clientHeight;
+
+      if (pageYOffset >= sectionTop - sectionHeight / 3) {
+        current = section.getAttribute("id");
+      }
+    });
+
+    navLinks.forEach(link => {
+      link.classList.remove("active");
+      if (link.getAttribute("href") === "#" + current) {
+        link.classList.add("active");
+      }
+    });
+  });
+  
+  const header = document.querySelector('.expand-header');
+const content = document.querySelector('.expand-content');
+
+header.addEventListener('click', () => {
+  if (content.style.maxHeight) {
+    content.style.maxHeight = null;      // collapse
+  } else {
+    content.style.maxHeight = content.scrollHeight + "px"; // expand
+  }
+});
+
+
+</script>
 </body>
 </html>
